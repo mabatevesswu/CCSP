@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Users | CCCSP</title>
+    <meta name="description" content="Admin users management (demo).">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-admin-users">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-users.html"><i class="fas fa-users"></i> <span>Users</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-applications.html"><i class="fas fa-folder-open"></i> <span>Applications</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-settings.html"><i class="fas fa-gear"></i> <span>Settings</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" id="adminLogoutLink"><i class="fas fa-sign-out-alt"></i> <span>Log out</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-dashboard-section" aria-labelledby="users-title">
+                <div class="admin-dashboard-header">
+                    <h1 id="users-title">Admin Users</h1>
+                    <p class="admin-subtitle">Demo users list — filter, export, and toggle status.</p>
+                </div>
+
+                <div class="admin-actions-row admin-toolbar">
+                    <div class="admin-search">
+                        <label for="userSearch" class="sr-only">Search users</label>
+                        <input id="userSearch" type="search" placeholder="Search name or email…">
+                    </div>
+
+                    <div class="admin-filter">
+                        <label for="userRoleFilter" class="sr-only">Filter by role</label>
+                        <select id="userRoleFilter" name="userRoleFilter">
+                            <option value="all">All roles</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Reviewer">Reviewer</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-cta" id="userExportCSV"><i class="fas fa-file-export" aria-hidden="true"></i> Export CSV</button>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <h2>Users</h2>
+                    <table class="admin-data-table" aria-label="Admin users table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr data-user-id="u1">
+                                <td>Admin Demo</td>
+                                <td>admin@cccsp.local</td>
+                                <td><span class="badge badge--neutral">Admin</span></td>
+                                <td><span class="badge approved">Active</span></td>
+                                <td><button class="btn-cta btn-cta--sm admin-row-toggle" type="button">Disable</button></td>
+                            </tr>
+                            <tr data-user-id="u2">
+                                <td>Rina Dela Cruz</td>
+                                <td>rina.reviewer@cccsp.local</td>
+                                <td><span class="badge badge--neutral">Reviewer</span></td>
+                                <td><span class="badge approved">Active</span></td>
+                                <td><button class="btn-cta btn-cta--sm admin-row-toggle" type="button">Disable</button></td>
+                            </tr>
+                            <tr data-user-id="u3">
+                                <td>Paolo Santos</td>
+                                <td>paolo.staff@cccsp.local</td>
+                                <td><span class="badge badge--neutral">Staff</span></td>
+                                <td><span class="badge pending">Invited</span></td>
+                                <td><button class="btn-cta btn-cta--sm admin-row-toggle" type="button">Resend invite</button></td>
+                            </tr>
+                            <tr data-user-id="u4">
+                                <td>Janine Reyes</td>
+                                <td>janine.staff@cccsp.local</td>
+                                <td><span class="badge badge--neutral">Staff</span></td>
+                                <td><span class="badge rejected">Disabled</span></td>
+                                <td><button class="btn-cta btn-cta--sm admin-row-toggle" type="button">Enable</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

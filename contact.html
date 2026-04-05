@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CCCSP Portal</title>
+    <meta name="description" content="Contact CCCSP support for questions about applications, requirements, status updates, and document corrections.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-contact">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a></li>
+                <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li class="nav-item"><a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+                <li class="nav-item"><a href="application.html"><i class="fas fa-file-signature"></i> <span>Application</span></a></li>
+                <li class="nav-item"><a href="processes.html"><i class="fas fa-tasks"></i> <span>Processes</span></a></li>
+                <li class="nav-item"><a href="status.html"><i class="fas fa-user-check"></i> <span>Status</span></a></li>
+                <li class="nav-item active"><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact Us</span></a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content contact-bg" id="main">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about your allowance or requirements? Reach out to us.</p>
+                    
+                    <div class="info-details">
+                        <div class="info-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>DepEd Cebu City Division Compound, Imus Ave, Cebu City</span>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-phone"></i>
+                            <span>(032) 231-1234</span>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri, 8:00 AM - 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card page-panel page-panel--light">
+                    <form id="contactForm" action="#">
+                        <div class="input-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input id="contactEmail" type="email" placeholder="example@email.com" autocomplete="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contactSubject">Subject</label>
+                            <select id="contactSubject">
+                                <option>General Inquiry</option>
+                                <option>Status Update</option>
+                                <option>Document Correction</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send btn-cta ripple primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

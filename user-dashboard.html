@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | CCCSP</title>
+    <meta name="description" content="User dashboard (demo).">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-user-dashboard">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="application.html"><i class="fas fa-file-signature"></i> <span>Application</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="status.html"><i class="fas fa-user-check"></i> <span>Status</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="user-dashboard.html"><i class="fas fa-id-card"></i> <span>My Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="user-login.html" id="userLogoutLink"><i class="fas fa-sign-out-alt"></i> <span>Log out</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-dashboard-section" aria-labelledby="user-dash-title">
+                <div class="admin-dashboard-header">
+                    <h1 id="user-dash-title">My Dashboard</h1>
+                    <p class="admin-subtitle">Signed in as <strong id="userDashboardEmail">user@cccsp.local</strong> (demo mode)</p>
+                </div>
+
+                <div class="admin-metrics-grid">
+                    <article class="admin-metric-card">
+                        <h3>Application Status</h3>
+                        <p><span class="badge pending" id="userAppStatus">Pending</span></p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Control #</h3>
+                        <p id="userControlNumber">CCCSP-2026-9001</p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Last Updated</h3>
+                        <p id="userLastUpdated">2026-03-24</p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Next Step</h3>
+                        <p id="userNextStep">Upload missing documents</p>
+                    </article>
+                </div>
+
+                <div class="admin-actions-row">
+                    <a class="btn-cta primary" href="application.html"><i class="fas fa-file-signature" aria-hidden="true"></i> Continue Application</a>
+                    <a class="btn-cta" href="status.html"><i class="fas fa-user-check" aria-hidden="true"></i> Check Status</a>
+                    <button class="btn-cta" type="button" id="userSimulateUpdate"><i class="fas fa-arrows-rotate" aria-hidden="true"></i> Simulate Update</button>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <h2>Recent Activity</h2>
+                    <table class="admin-data-table" aria-label="Recent activity table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Event</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userActivityBody">
+                            <tr><td>2026-03-24</td><td>Login</td><td>Signed in (demo)</td></tr>
+                            <tr><td>2026-03-23</td><td>Submission</td><td>Application submitted for review</td></tr>
+                            <tr><td>2026-03-22</td><td>Upload</td><td>Proof of residency uploaded</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

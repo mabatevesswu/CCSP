@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CCCSP</title>
+    <meta name="description" content="Admin dashboard showing scholarship application KPIs and controls.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-admin-dashboard">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-users.html"><i class="fas fa-users"></i> <span>Users</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-applications.html"><i class="fas fa-folder-open"></i> <span>Applications</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-settings.html"><i class="fas fa-gear"></i> <span>Settings</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" id="adminLogoutLink"><i class="fas fa-sign-out-alt"></i> <span>Log out</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-dashboard-section" aria-labelledby="dashboard-title">
+                <div class="admin-dashboard-header">
+                    <h1 id="dashboard-title">CCCSP Admin Dashboard</h1>
+                    <p class="admin-subtitle">Logged in as <strong>admin@cccsp.local</strong> (temporary demo mode)</p>
+                </div>
+
+                <div class="admin-metrics-grid">
+                    <article class="admin-metric-card">
+                        <h3>Total Applications</h3>
+                        <p id="totalApplications">5,003</p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Pending Review</h3>
+                        <p id="pendingApplications">284</p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Approved</h3>
+                        <p id="approvedApplications">2,882</p>
+                    </article>
+                    <article class="admin-metric-card">
+                        <h3>Rejected</h3>
+                        <p id="rejectedApplications">137</p>
+                    </article>
+                </div>
+
+                <div class="admin-actions-row">
+                    <button class="btn-cta primary" id="actionRefresh"><i class="fas fa-sync-alt"></i> Simulate Refresh</button>
+                    <button class="btn-cta" id="actionReset">Reset Metrics</button>
+                    <button class="btn-cta" id="actionExportCSV"><i class="fas fa-file-export" aria-hidden="true"></i> Export CSV</button>
+
+                    <div class="admin-filter">
+                        <label for="adminStatusFilter" class="sr-only">Filter by status</label>
+                        <select id="adminStatusFilter" name="adminStatusFilter">
+                            <option value="all">All statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <h2>Recent Records</h2>
+                    <table class="admin-data-table" aria-label="Recently submitted applications">
+                        <thead>
+                            <tr>
+                                <th>Control #</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Barangay</th>
+                                <th>Submitted</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentApplicationsBody">
+                            <tr><td>CCCSP-2026-5001</td><td>Maria Santos</td><td><span class="badge approved">Approved</span></td><td>Labangon</td><td>2026-03-19</td></tr>
+                            <tr><td>CCCSP-2026-5002</td><td>Jun Reyes</td><td><span class="badge pending">Pending</span></td><td>Talamban</td><td>2026-03-20</td></tr>
+                            <tr><td>CCCSP-2026-5003</td><td>Lea Cruz</td><td><span class="badge rejected">Rejected</span></td><td>Busay</td><td>2026-03-21</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Status | CCCSP Portal</title>
+    <meta name="description" content="Check your CCCSP application status using your control number.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="status.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-status">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a></li>
+                <li class="nav-item"><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li class="nav-item"><a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+                <li class="nav-item"><a href="application.html"><i class="fas fa-file-signature"></i> <span>Application</span></a></li>
+                <li class="nav-item"><a href="processes.html"><i class="fas fa-tasks"></i> <span>Processes</span></a></li>
+                <li class="nav-item active"><a href="status.html"><i class="fas fa-user-check"></i> <span>Status</span></a></li>
+                <li class="nav-item"><a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact Us</span></a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content status-bg" id="main">
+            <div class="status-wrapper page-panel page-panel--light">
+                <header class="status-header">
+                    <h1>Track Application</h1>
+                    <p>Enter your control number to view your real-time status.</p>
+                </header>
+
+                <div class="search-section">
+                    <div class="search-field">
+                        <label for="statusSearch" class="sr-only">Control number</label>
+                        <input type="text" id="statusSearch" placeholder="CCCSP-2026-XXXX" autocomplete="off" inputmode="text">
+                        <div class="search-help">Example: <strong>CCCSP-2026-1024</strong></div>
+                    </div>
+                    <button class="btn-search btn-cta ripple primary" type="button"><i class="fas fa-search" aria-hidden="true"></i> Check</button>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="badge pending">Under Review</span>
+                        <h3>Juan A. Dela Cruz</h3>
+                    </div>
+                    <div class="result-body">
+                        <div class="detail-row">
+                            <span>Control Number:</span>
+                            <strong>CCCSP-2026-1024</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Barangay:</span>
+                            <strong>Mabolo</strong>
+                        </div>
+                        <hr>
+                        <p class="status-message">
+                            <i class="fas fa-info-circle"></i> 
+                            Your documents have been received and are currently being verified by the scholarship board.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

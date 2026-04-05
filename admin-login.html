@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | CCCSP</title>
+    <meta name="description" content="Admin login for CCCSP dashboard (temporary demo credentials).">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-admin-login">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-auth-section" aria-labelledby="admin-login-title">
+                <div class="admin-auth-card">
+                    <h1 id="admin-login-title">Admin Login</h1>
+                    <p class="admin-subtitle">Temporary credentials for demo access.</p>
+                    <p class="admin-credentials"><strong>Email:</strong> admin@cccsp.local<br><strong>Password:</strong> TempPass123!</p>
+
+                    <form id="adminLoginForm" aria-label="Admin login form" autocomplete="off">
+                        <label for="adminEmail">Email</label>
+                        <input type="email" id="adminEmail" name="adminEmail" placeholder="admin@cccsp.local" required>
+
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" name="adminPassword" placeholder="Temporarily hardcoded" required>
+
+                        <div class="admin-demo-actions">
+                            <button type="button" class="btn-cta" id="adminUseDemo"><i class="fas fa-key" aria-hidden="true"></i> Fill demo credentials</button>
+                        </div>
+
+                        <button type="submit" class="btn-cta primary">Sign In</button>
+                        <div id="adminLoginMessage" role="alert" aria-live="polite"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

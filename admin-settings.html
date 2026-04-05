@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | CCCSP</title>
+    <meta name="description" content="Admin settings (demo).">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-admin-settings">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-users.html"><i class="fas fa-users"></i> <span>Users</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-applications.html"><i class="fas fa-folder-open"></i> <span>Applications</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-settings.html"><i class="fas fa-gear"></i> <span>Settings</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" id="adminLogoutLink"><i class="fas fa-sign-out-alt"></i> <span>Log out</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-dashboard-section" aria-labelledby="settings-title">
+                <div class="admin-dashboard-header">
+                    <h1 id="settings-title">Settings</h1>
+                    <p class="admin-subtitle">Demo settings stored in your browser (localStorage).</p>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <h2>Program configuration</h2>
+
+                    <form id="adminSettingsForm" class="admin-form" aria-label="Admin settings form">
+                        <div class="admin-form__row">
+                            <label class="admin-form__label" for="settingApplicationsOpen">Applications open</label>
+                            <div class="admin-form__field">
+                                <input type="checkbox" id="settingApplicationsOpen" name="settingApplicationsOpen">
+                                <span class="admin-form__hint">Controls the “Applications open” messaging for demo.</span>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <label class="admin-form__label" for="settingIncomeLimit">Income limit (₱/year)</label>
+                            <div class="admin-form__field">
+                                <input type="number" id="settingIncomeLimit" name="settingIncomeLimit" min="0" step="1000" placeholder="400000" required>
+                                <span class="admin-form__hint">Used for demo validation thresholds.</span>
+                            </div>
+                        </div>
+
+                        <div class="admin-form__row">
+                            <label class="admin-form__label" for="settingSupportEmail">Support email</label>
+                            <div class="admin-form__field">
+                                <input type="email" id="settingSupportEmail" name="settingSupportEmail" placeholder="support@cccsp.local" required>
+                                <span class="admin-form__hint">Displayed in demo communications.</span>
+                            </div>
+                        </div>
+
+                        <div class="admin-actions-row">
+                            <button class="btn-cta primary" type="submit" id="adminSettingsSave"><i class="fas fa-floppy-disk" aria-hidden="true"></i> Save</button>
+                            <button class="btn-cta" type="button" id="adminSettingsReset"><i class="fas fa-rotate-left" aria-hidden="true"></i> Reset</button>
+                            <div id="adminSettingsMessage" role="status" aria-live="polite"></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

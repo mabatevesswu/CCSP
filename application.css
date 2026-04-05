@@ -1,0 +1,223 @@
+/* -------------------------------------------------------------------------- */
+/* Application Page                                                            */
+/* -------------------------------------------------------------------------- */
+
+.app-bg {
+    padding: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.app-form-container {
+    width: min(900px, 100%);
+    padding: 34px 30px;
+    margin: 64px 0 44px;
+    animation: fadeUp 0.55s ease-out both;
+}
+
+.app-header {
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(13, 27, 42, 0.10);
+    margin-bottom: 26px;
+}
+
+.app-header h1 {
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+}
+
+.app-header p {
+    margin-top: 10px;
+    color: #475569;
+    line-height: 1.7;
+    font-weight: 650;
+}
+
+.form-section {
+    margin-top: 20px;
+    padding: 18px 18px;
+    border-radius: var(--radius-md);
+    background: rgba(11, 94, 215, 0.04);
+    border: 1px solid rgba(11, 94, 215, 0.10);
+    animation: fadeUp 0.5s ease-out both;
+}
+
+.form-section:nth-of-type(1) { animation-delay: 0.06s; }
+.form-section:nth-of-type(2) { animation-delay: 0.12s; }
+.form-section:nth-of-type(3) { animation-delay: 0.18s; }
+
+.form-section h3 {
+    font-size: 1.05rem;
+    color: #094aa8;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-row {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 850;
+    color: #0b1a2d;
+}
+
+.input-field input,
+.input-field select {
+    width: 100%;
+    padding: 12px 12px;
+    border: 1px solid rgba(13, 27, 42, 0.18);
+    border-radius: 14px;
+    font-size: 1rem;
+    outline: none;
+    background: #ffffff;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-color: rgba(11, 94, 215, 0.65);
+    box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.10);
+    transform: translateY(-1px);
+}
+
+.input-field.focused label {
+    color: rgba(11, 94, 215, 0.95);
+}
+
+.file-grid {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.file-box {
+    border-radius: var(--radius-md);
+    padding: 16px 14px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(13, 27, 42, 0.12);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.file-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 45px rgba(2, 6, 23, 0.10);
+}
+
+.file-box label {
+    display: block;
+    font-weight: 900;
+    color: #0b1a2d;
+    margin-bottom: 10px;
+}
+
+.file-box input[type="file"] {
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px dashed rgba(11, 94, 215, 0.45);
+    background: rgba(11, 94, 215, 0.03);
+}
+
+.file-box input[type="file"]::file-selector-button {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 14px;
+    background: rgba(11, 94, 215, 0.12);
+    color: #0b1a2d;
+    font-weight: 900;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.file-box input[type="file"]::file-selector-button:hover {
+    background: rgba(11, 94, 215, 0.18);
+}
+
+.file-meta {
+    margin-top: 10px;
+    color: #475569;
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.form-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit {
+    min-width: 220px;
+}
+
+/* Loading spinner for submit (script.js toggles .loading) */
+.btn-submit.loading {
+    pointer-events: none;
+    color: transparent;
+}
+
+.btn-submit.loading i {
+    opacity: 0;
+}
+
+.btn-submit.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .app-bg {
+        padding: 20px;
+    }
+
+    .app-form-container {
+        margin-top: 44px;
+        padding: 26px 18px;
+    }
+}
+
+@media (max-width: 650px) {
+    .input-row,
+    .file-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions,
+    .form-actions .btn-submit {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .app-form-container,
+    .form-section {
+        animation: none;
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Applications | CCCSP</title>
+    <meta name="description" content="Admin applications review (demo).">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-admin-applications">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-users.html"><i class="fas fa-users"></i> <span>Users</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="admin-applications.html"><i class="fas fa-folder-open"></i> <span>Applications</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-settings.html"><i class="fas fa-gear"></i> <span>Settings</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-login.html" id="adminLogoutLink"><i class="fas fa-sign-out-alt"></i> <span>Log out</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="section-inner admin-dashboard-section" aria-labelledby="apps-title">
+                <div class="admin-dashboard-header">
+                    <h1 id="apps-title">Applications</h1>
+                    <p class="admin-subtitle">Demo review queue — search, filter, view details, export.</p>
+                </div>
+
+                <div class="admin-actions-row admin-toolbar">
+                    <div class="admin-search">
+                        <label for="appSearch" class="sr-only">Search applications</label>
+                        <input id="appSearch" type="search" placeholder="Search control # or name…">
+                    </div>
+
+                    <div class="admin-filter">
+                        <label for="appStatusFilter" class="sr-only">Filter by status</label>
+                        <select id="appStatusFilter" name="appStatusFilter">
+                            <option value="all">All statuses</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-cta" id="appExportCSV"><i class="fas fa-file-export" aria-hidden="true"></i> Export CSV</button>
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <h2>Queue</h2>
+                    <table class="admin-data-table" aria-label="Applications table">
+                        <thead>
+                            <tr>
+                                <th>Control #</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Barangay</th>
+                                <th>Submitted</th>
+                                <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsTableBody">
+                            <tr data-app-id="a5001" data-notes="Complete documents. Verified residency." data-program="College" data-income="240000">
+                                <td>CCCSP-2026-5001</td><td>Maria Santos</td><td><span class="badge approved">Approved</span></td><td>Labangon</td><td>2026-03-19</td>
+                                <td><button class="btn-cta btn-cta--sm admin-view-app" type="button">View</button></td>
+                            </tr>
+                            <tr data-app-id="a5002" data-notes="Missing income proof. Sent request." data-program="College" data-income="390000">
+                                <td>CCCSP-2026-5002</td><td>Jun Reyes</td><td><span class="badge pending">Pending</span></td><td>Talamban</td><td>2026-03-20</td>
+                                <td><button class="btn-cta btn-cta--sm admin-view-app" type="button">View</button></td>
+                            </tr>
+                            <tr data-app-id="a5003" data-notes="Not eligible: outside Cebu City residency." data-program="Senior High" data-income="180000">
+                                <td>CCCSP-2026-5003</td><td>Lea Cruz</td><td><span class="badge rejected">Rejected</span></td><td>Busay</td><td>2026-03-21</td>
+                                <td><button class="btn-cta btn-cta--sm admin-view-app" type="button">View</button></td>
+                            </tr>
+                            <tr data-app-id="a5004" data-notes="Under initial review." data-program="College" data-income="310000">
+                                <td>CCCSP-2026-5004</td><td>Carlo Lim</td><td><span class="badge pending">Pending</span></td><td>Mabolo</td><td>2026-03-22</td>
+                                <td><button class="btn-cta btn-cta--sm admin-view-app" type="button">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="admin-modal" id="appDetailsModal" role="dialog" aria-modal="true" aria-labelledby="appDetailsTitle" hidden>
+                    <div class="admin-modal__backdrop" data-close-modal></div>
+                    <div class="admin-modal__panel">
+                        <div class="admin-modal__header">
+                            <h3 id="appDetailsTitle">Application Details</h3>
+                            <button class="admin-modal__close" type="button" aria-label="Close" data-close-modal>&times;</button>
+                        </div>
+                        <div class="admin-modal__body">
+                            <dl class="admin-dl">
+                                <div><dt>Control #</dt><dd id="appDetailControl">—</dd></div>
+                                <div><dt>Applicant</dt><dd id="appDetailName">—</dd></div>
+                                <div><dt>Status</dt><dd id="appDetailStatus">—</dd></div>
+                                <div><dt>Program</dt><dd id="appDetailProgram">—</dd></div>
+                                <div><dt>Barangay</dt><dd id="appDetailBarangay">—</dd></div>
+                                <div><dt>Declared income</dt><dd id="appDetailIncome">—</dd></div>
+                                <div><dt>Reviewer notes</dt><dd id="appDetailNotes">—</dd></div>
+                            </dl>
+                        </div>
+                        <div class="admin-modal__footer">
+                            <button class="btn-cta" type="button" data-close-modal>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

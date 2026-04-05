@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | CCCSP Portal</title>
+    <meta name="description" content="Apply for the Cebu City Scholarship Program (CCCSP). Submit your details, upload requirements, and save your control number for tracking.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="application.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-application">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html"><i class="fas fa-info-circle"></i> <span>About</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="application.html"><i class="fas fa-file-signature"></i> <span>Application</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="processes.html"><i class="fas fa-tasks"></i> <span>Processes</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="status.html"><i class="fas fa-user-check"></i> <span>Status</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html"><i class="fas fa-envelope"></i> <span>Contact Us</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content app-bg" id="main">
+            <div class="app-form-container page-panel page-panel--light">
+                <header class="app-header">
+                    <h1>Scholarship Application</h1>
+                    <p>Complete the form and upload your requirements. Save your control number after submission.</p>
+                </header>
+
+                <form id="cccspForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Details</h3>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="fullName">Full Name</label>
+                                <input id="fullName" type="text" placeholder="Surname, First Name M.I." autocomplete="name" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="barangay">Barangay</label>
+                                <select id="barangay" required>
+                                    <option value="">Select Barangay</option>
+                                    <option value="lahug">Lahug</option>
+                                    <option value="mabolo">Mabolo</option>
+                                    <option value="busay">Busay (Mountain)</option>
+                                    </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-wallet"></i> Financial Info</h3>
+                        <div class="input-row">
+                            <div class="input-field">
+                                <label for="income">Annual Family Income</label>
+                                <input id="income" type="number" placeholder="e.g. 250000" inputmode="numeric" required>
+                            </div>
+                            <div class="input-field">
+                                <label for="voterStatus">Voter Status</label>
+                                <select id="voterStatus" required>
+                                    <option value="">Are your parents registered?</option>
+                                    <option value="yes">Yes, Registered in Cebu City</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-cloud-upload-alt"></i> Requirements</h3>
+                        <div class="file-grid">
+                            <div class="file-box">
+                                <label for="votersCert">Voter's Certificate</label>
+                                <input id="votersCert" type="file" required>
+                                <div class="file-meta" aria-live="polite">No file selected</div>
+                            </div>
+                            <div class="file-box">
+                                <label for="reportCard">Report Card (Form 138)</label>
+                                <input id="reportCard" type="file" required>
+                                <div class="file-meta" aria-live="polite">No file selected</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit btn-cta ripple primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

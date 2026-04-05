@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCCSP | Home</title>
+    <meta name="description" content="Cebu City Scholarship Program (CCCSP) — apply online, check status, and get support.">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="page-home">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="dashboard-container">
+        <nav class="sidebar" aria-label="Primary navigation">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CCCSP Logo" class="sidebar-logo">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="landing.html"><i class="fas fa-bullhorn" aria-hidden="true"></i> <span>Landing</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> <span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> <span>About</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="application.html"><i class="fas fa-file-signature" aria-hidden="true"></i> <span>Application</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="processes.html"><i class="fas fa-tasks" aria-hidden="true"></i> <span>Processes</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="status.html"><i class="fas fa-user-check" aria-hidden="true"></i> <span>Status</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html"><i class="fas fa-envelope" aria-hidden="true"></i> <span>Contact Us</span></a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" id="main">
+            <section class="home-hero" aria-labelledby="home-hero-title">
+                <div class="section-inner home-hero__inner">
+                    <div class="home-hero__grid">
+                        <div class="home-hero__copy">
+                            <div class="home-hero__kicker">Cebu City Scholarship Program</div>
+                            <div class="home-hero__status" aria-label="Application status">
+                                <span class="home-status-pill" id="homeApplicationsStatus" data-open-text="Applications open" data-closed-text="Applications currently closed">
+                                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                                    <span>Applications open</span>
+                                </span>
+                                <span class="home-status-note">Deadline: <strong>March 31, 2026</strong></span>
+                            </div>
+                            <h1 id="home-hero-title" class="home-hero__title">A simpler way to apply and check your scholarship status.</h1>
+                            <p class="home-hero__lead">Apply online, upload your documents, and track updates using your control number.</p>
+
+                            <ul class="home-hero__highlights" aria-label="Program highlights">
+                                <li><i class="fas fa-location-dot" aria-hidden="true"></i> Cebu City residents</li>
+                                <li><i class="fas fa-coins" aria-hidden="true"></i> Income limit: ₱400,000/year</li>
+                                <li><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i> Online document upload</li>
+                            </ul>
+
+                            <div class="home-toggle" aria-label="Choose a path">
+                                <a class="home-toggle__btn" href="#checklist"><i class="fas fa-seedling" aria-hidden="true"></i> First-time applicant</a>
+                                <a class="home-toggle__btn" href="#returning"><i class="fas fa-rotate-left" aria-hidden="true"></i> Returning applicant</a>
+                            </div>
+
+                            <div class="home-hero__actions" aria-label="Primary actions">
+                                <a href="application.html" class="btn-cta ripple primary"><i class="fas fa-file-signature" aria-hidden="true"></i> Apply now</a>
+                                <a href="status.html" class="btn-cta ripple secondary"><i class="fas fa-user-check" aria-hidden="true"></i> Check status</a>
+                            </div>
+
+                            <div class="home-minirow" aria-label="Quick info">
+                                <div class="home-mini">
+                                    <div class="home-mini__title"><i class="fas fa-clock" aria-hidden="true"></i> How long does it take?</div>
+                                    <ul class="home-mini__list">
+                                        <li>Apply: about <strong>10–15 minutes</strong></li>
+                                        <li>Status check: <strong>under 1 minute</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="home-mini">
+                                    <div class="home-mini__title"><i class="fas fa-folder-open" aria-hidden="true"></i> What you’ll need</div>
+                                    <ul class="home-mini__list">
+                                        <li>Residency ID / proof</li>
+                                        <li>Proof of income + enrollment</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="home-hero__links" aria-label="Helpful links">
+                                <a class="meta-link" href="#checklist"><i class="fas fa-list-check" aria-hidden="true"></i> Checklist</a>
+                                <a class="meta-link" href="#faq"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQs</a>
+                                <a class="meta-link" href="contact.html"><i class="fas fa-headset" aria-hidden="true"></i> Get help</a>
+                            </div>
+
+                            <div class="home-demo-links" aria-label="Demo links">
+                                <span class="home-demo-links__label">Demo:</span>
+                                <a href="user-login.html">User login</a>
+                                <span class="home-demo-links__sep">•</span>
+                                <a href="admin-login.html">Admin login</a>
+                            </div>
+                        </div>
+
+                        <aside class="home-hero__card" aria-label="First-time applicant guide">
+                            <div class="home-card__header">
+                                <div class="home-card__title">First time?</div>
+                                <div class="home-card__subtitle">Start with these 3 steps</div>
+                            </div>
+
+                            <ol class="home-steps" aria-label="Three steps">
+                                <li><span class="home-step__num" aria-hidden="true">1</span> Check eligibility</li>
+                                <li><span class="home-step__num" aria-hidden="true">2</span> Prepare documents</li>
+                                <li><span class="home-step__num" aria-hidden="true">3</span> Submit and save your control #</li>
+                            </ol>
+
+                            <div class="home-card__actions" aria-label="Quick actions">
+                                <a href="processes.html" class="btn-cta btn-cta--ghost"><i class="fas fa-diagram-project" aria-hidden="true"></i> View process</a>
+                                <a href="contact.html" class="btn-cta btn-cta--ghost"><i class="fas fa-envelope" aria-hidden="true"></i> Ask a question</a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-checklist animate-on-scroll" id="checklist" aria-labelledby="checklist-title">
+                <div class="section-inner">
+                    <div class="section-heading">
+                        <h2 class="section-title" id="checklist-title">Quick checklist</h2>
+                        <p class="section-subtitle">Use this before you start your application.</p>
+                    </div>
+
+                    <div class="home-two-col">
+                        <div class="home-panel">
+                            <h3><i class="fas fa-circle-check" aria-hidden="true"></i> Eligibility</h3>
+                            <ul class="home-list">
+                                <li>Resident of Cebu City</li>
+                                <li>Family income ≤ ₱400,000/year</li>
+                                <li>Enrolled (or enrolling) in an accredited school</li>
+                            </ul>
+                        </div>
+
+                        <div class="home-panel">
+                            <h3><i class="fas fa-folder-open" aria-hidden="true"></i> Documents</h3>
+                            <ul class="home-list">
+                                <li>Proof of residency (ID / barangay certificate)</li>
+                                <li>Proof of income</li>
+                                <li>Enrollment proof / report card</li>
+                                <li>Clear photos or scans</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="home-callout" role="note" aria-label="Control number tip">
+                        <div class="home-callout__icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                        <div class="home-callout__text"><strong>Tip:</strong> After you submit, save your <strong>control number</strong>. You’ll need it to check status.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-returning animate-on-scroll" id="returning" aria-labelledby="returning-title">
+                <div class="section-inner">
+                    <div class="section-heading">
+                        <h2 class="section-title" id="returning-title">Returning applicant</h2>
+                        <p class="section-subtitle">Already applied? Check your status using your control number.</p>
+                    </div>
+
+                    <div class="home-returning__card">
+                        <div class="home-returning__row">
+                            <div class="home-returning__field">
+                                <label for="homeControlNumber" class="sr-only">Control number</label>
+                                <input id="homeControlNumber" type="text" placeholder="Enter control number (e.g., CCCSP-2026-1024)">
+                            </div>
+                            <button class="btn-cta primary" type="button" id="homeGoStatus"><i class="fas fa-user-check" aria-hidden="true"></i> Go to Status</button>
+                            <a class="btn-cta btn-cta--ghost" href="status.html"><i class="fas fa-arrow-right" aria-hidden="true"></i> Open Status page</a>
+                        </div>
+                        <div class="home-returning__hint">We’ll carry your control number to the Status page for a faster demo.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section animate-on-scroll" id="faq" aria-labelledby="faq-title">
+                <div class="section-inner">
+                    <div class="section-heading section-heading--center">
+                        <h2 class="section-title section-title--solid" id="faq-title">Frequently asked questions</h2>
+                        <p class="section-subtitle section-subtitle--dark">Short answers to common questions.</p>
+                    </div>
+
+                    <div class="faq-grid" aria-label="Frequently asked questions">
+                        <details class="faq-item">
+                            <summary>How do I apply?</summary>
+                            <div class="faq-body">Go to the Application page, complete the form, then upload your documents.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>How do I check my application status?</summary>
+                            <div class="faq-body">Use your control number on the Status page. Keep it saved after you submit.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What if my family income is above ₱400,000?</summary>
+                            <div class="faq-body">You can still submit an application, but it may require additional manual review before a decision is made.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What documents do I need to prepare?</summary>
+                            <div class="faq-body">Common requirements include proof of residency, proof of income, and school/enrollment documents.</div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-band" aria-label="Apply or check status">
+                <div class="section-inner cta-band__inner">
+                    <div class="cta-band__copy">
+                        <h2 class="cta-band__title">Ready to apply?</h2>
+                        <p class="cta-band__text">Apply in minutes, then track your progress anytime with your control number.</p>
+                    </div>
+                    <div class="cta-band__actions">
+                        <a href="application.html" class="btn-cta ripple primary"><i class="fas fa-file-signature" aria-hidden="true"></i> Apply now</a>
+                        <a href="status.html" class="btn-cta ripple secondary"><i class="fas fa-user-check" aria-hidden="true"></i> Check status</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="home-footer" aria-label="Site footer">
+                <div class="section-inner home-footer__inner">
+                    <div class="home-footer__grid">
+                        <div>
+                            <div class="home-footer__title">CCCSP Support</div>
+                            <div class="home-footer__text">Need help with requirements, uploads, or status updates? Contact us anytime.</div>
+                        </div>
+                        <div>
+                            <div class="home-footer__label">Email</div>
+                            <div class="home-footer__text"><a href="contact.html">Contact support form</a></div>
+                        </div>
+                        <div>
+                            <div class="home-footer__label">Office hours</div>
+                            <div class="home-footer__text">Mon–Fri, 8:00 AM–5:00 PM</div>
+                        </div>
+                        <div>
+                            <div class="home-footer__label">Location</div>
+                            <div class="home-footer__text">Cebu City Hall, Cebu City</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

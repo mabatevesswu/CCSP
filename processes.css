@@ -1,0 +1,203 @@
+/* -------------------------------------------------------------------------- */
+/* Processes Page                                                              */
+/* -------------------------------------------------------------------------- */
+
+.proc-bg {
+    padding: 44px;
+}
+
+.process-shell {
+    padding: 34px 30px;
+    margin: 64px auto 44px;
+    width: min(920px, 100%);
+    animation: fadeUp 0.55s ease-out both;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-shell::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    background: radial-gradient(900px circle at 15% 0%, rgba(11, 94, 215, 0.22), transparent 55%),
+        radial-gradient(700px circle at 85% 30%, rgba(255, 204, 0, 0.18), transparent 55%);
+}
+
+.process-shell:hover::before,
+.process-shell:focus-within::before {
+    opacity: 1;
+}
+
+.process-shell:hover,
+.process-shell:focus-within {
+    box-shadow: 0 26px 70px rgba(2, 6, 23, 0.18),
+        0 0 0 1px rgba(11, 94, 215, 0.18),
+        0 0 40px rgba(11, 94, 215, 0.18),
+        0 0 30px rgba(255, 204, 0, 0.12);
+}
+
+.process-header {
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(13, 27, 42, 0.10);
+    margin-bottom: 22px;
+}
+
+.process-header h1 {
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+}
+
+.process-header p {
+    margin-top: 10px;
+    color: #475569;
+    line-height: 1.7;
+    font-weight: 650;
+}
+
+.process-steps {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.process-step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 14px;
+    padding: 16px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(13, 27, 42, 0.10);
+    background: rgba(11, 94, 215, 0.04);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.process-step::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(900px circle at 10% 0%, rgba(11, 94, 215, 0.14), transparent 60%);
+    opacity: 0.9;
+}
+
+.process-step > * {
+    position: relative;
+    z-index: 1;
+}
+
+.process-step__num {
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(11, 94, 215, 0.14), rgba(11, 94, 215, 0.08));
+    border: 1px solid rgba(11, 94, 215, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: 0.16em;
+}
+
+.process-step__body h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+}
+
+.process-step__body h3 i {
+    color: rgba(11, 94, 215, 0.95);
+}
+
+.process-step__body p {
+    margin-top: 8px;
+    color: #475569;
+    line-height: 1.7;
+    font-weight: 650;
+}
+
+.process-step:hover {
+    transform: translateY(-2px);
+    border-color: rgba(11, 94, 215, 0.18);
+    background: rgba(11, 94, 215, 0.06);
+    box-shadow: 0 18px 50px rgba(2, 6, 23, 0.10), 0 0 28px rgba(11, 94, 215, 0.10);
+}
+
+.process-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.process-steps.animate-in .process-step {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeUp 0.55s ease-out both;
+}
+
+.process-steps.animate-in .process-step:nth-child(2) { animation-delay: 0.08s; }
+.process-steps.animate-in .process-step:nth-child(3) { animation-delay: 0.16s; }
+.process-steps.animate-in .process-step:nth-child(4) { animation-delay: 0.24s; }
+
+@media (max-width: 900px) {
+    .proc-bg {
+        padding: 20px;
+    }
+
+    .process-shell {
+        margin-top: 44px;
+        padding: 26px 18px;
+    }
+}
+
+@media (max-width: 640px) {
+    .process-step {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step__num {
+        width: 100%;
+        height: auto;
+        padding: 12px 0;
+    }
+
+    .process-actions,
+    .process-actions .btn-cta {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .process-shell,
+    .process-steps.animate-in .process-step {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .process-shell::before {
+        transition: none;
+    }
+
+    .process-step,
+    .process-step:hover {
+        transition: none;
+        transform: none;
+    }
+}

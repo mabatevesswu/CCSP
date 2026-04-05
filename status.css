@@ -1,0 +1,217 @@
+/* -------------------------------------------------------------------------- */
+/* Status Page                                                                 */
+/* -------------------------------------------------------------------------- */
+
+.status-bg {
+    padding: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.status-wrapper {
+    width: min(720px, 100%);
+    padding: 34px 30px;
+    margin: 64px 0 44px;
+    animation: fadeUp 0.55s ease-out both;
+}
+
+.status-header {
+    text-align: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(13, 27, 42, 0.10);
+    margin-bottom: 22px;
+}
+
+.status-header h1 {
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: -0.03em;
+}
+
+.status-header p {
+    margin-top: 10px;
+    color: #475569;
+    line-height: 1.7;
+    font-weight: 650;
+}
+
+.search-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+}
+
+.search-field input {
+    width: 100%;
+    padding: 14px 14px;
+    border: 1px solid rgba(13, 27, 42, 0.18);
+    border-radius: 16px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+    background: #ffffff;
+}
+
+.search-field input:focus {
+    border-color: rgba(11, 94, 215, 0.65);
+    box-shadow: 0 0 0 4px rgba(11, 94, 215, 0.10);
+    transform: translateY(-1px);
+}
+
+.search-help {
+    margin-top: 8px;
+    color: #475569;
+    font-weight: 650;
+    font-size: 0.92rem;
+}
+
+.btn-search {
+    min-width: 150px;
+    height: 54px;
+    align-self: start;
+}
+
+/* Pulse animation for search button */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(11, 94, 215, 0.35);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(11, 94, 215, 0);
+    }
+}
+
+.btn-search.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Result Card */
+.result-card {
+    margin-top: 18px;
+    border-radius: var(--radius-lg);
+    padding: 20px 18px;
+    border: 1px solid rgba(13, 27, 42, 0.10);
+    background: rgba(11, 94, 215, 0.04);
+    display: none;
+}
+
+.result-card.show {
+    display: block;
+    animation: fadeUp 0.35s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.badge.pending {
+    background: rgba(255, 204, 0, 0.22);
+    border: 1px solid rgba(255, 204, 0, 0.22);
+    color: #7a5a00;
+}
+
+.badge.approved {
+    background: rgba(34, 197, 94, 0.14);
+    border: 1px solid rgba(34, 197, 94, 0.18);
+    color: #0f5132;
+}
+
+.result-header h3 {
+    color: #0b1a2d;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(13, 27, 42, 0.08);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.detail-row span {
+    color: #475569;
+    font-weight: 750;
+}
+
+.detail-row strong {
+    color: #0b1a2d;
+}
+
+.result-body hr {
+    border: none;
+    border-top: 1px solid rgba(13, 27, 42, 0.10);
+    margin: 14px 0;
+}
+
+.status-message {
+    padding: 14px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(13, 27, 42, 0.10);
+    color: #334155;
+    line-height: 1.7;
+    font-weight: 650;
+}
+
+.status-message i {
+    color: rgba(11, 94, 215, 0.95);
+    margin-right: 8px;
+}
+
+@media (max-width: 900px) {
+    .status-bg {
+        padding: 20px;
+    }
+
+    .status-wrapper {
+        margin-top: 44px;
+        padding: 26px 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .search-section {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-search {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .status-wrapper,
+    .result-card.show {
+        animation: none;
+    }
+}
